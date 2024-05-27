@@ -1,0 +1,462 @@
+2024-05-22 21:04:38,926 - video [INFO] - Loaded seq weights
+2024-05-22 21:04:39,109 - video [INFO] - Start training...
+2024-05-22 21:05:27,928 - video [INFO] - Loaded seq weights
+2024-05-22 21:06:59,023 - video [INFO] - Loaded seq weights
+2024-05-22 21:06:59,206 - video [INFO] - Start training...
+2024-05-22 21:07:35,308 - video [INFO] - Loaded seq weights
+2024-05-22 21:07:35,473 - video [INFO] - Start training...
+2024-05-22 21:17:50,502 - video [INFO] - save model in Model0.pth
+2024-05-22 21:17:50,523 - video [INFO] - Epoch [1/40], Loss: 0.6301, trian_acc: 0.6184, train_mae: 0.6267
+2024-05-22 21:21:15,231 - video [INFO] - Test_Loss: 0.6407, test_acc: 0.6491, test_mae: 0.6493
+2024-05-22 21:31:21,030 - video [INFO] - save model in Model0.pth
+2024-05-22 21:31:21,035 - video [INFO] - Epoch [2/40], Loss: 0.6054, trian_acc: 0.6689, train_mae: 0.6091
+2024-05-22 21:34:33,962 - video [INFO] - Test_Loss: 0.6550, test_acc: 0.6491, test_mae: 0.6464
+2024-05-22 21:44:32,165 - video [INFO] - save model in Model0.pth
+2024-05-22 21:44:32,168 - video [INFO] - Epoch [3/40], Loss: 0.6228, trian_acc: 0.6520, train_mae: 0.6199
+2024-05-22 21:47:48,708 - video [INFO] - Test_Loss: 0.6473, test_acc: 0.6491, test_mae: 0.6460
+2024-05-22 21:57:43,496 - video [INFO] - save model in Model0.pth
+2024-05-22 21:57:43,498 - video [INFO] - Epoch [4/40], Loss: 0.6195, trian_acc: 0.6491, train_mae: 0.6186
+2024-05-22 22:00:58,018 - video [INFO] - Test_Loss: 0.6448, test_acc: 0.6491, test_mae: 0.6442
+2024-05-22 22:10:55,626 - video [INFO] - save model in Model0.pth
+2024-05-22 22:10:55,628 - video [INFO] - Epoch [5/40], Loss: 0.6162, trian_acc: 0.6528, train_mae: 0.6127
+2024-05-22 22:14:11,148 - video [INFO] - Test_Loss: 0.6481, test_acc: 0.6491, test_mae: 0.6437
+2024-05-22 22:24:13,551 - video [INFO] - save model in Model0.pth
+2024-05-22 22:24:13,553 - video [INFO] - Epoch [6/40], Loss: 0.6167, trian_acc: 0.6506, train_mae: 0.6168
+2024-05-22 22:27:29,436 - video [INFO] - Test_Loss: 0.6247, test_acc: 0.6491, test_mae: 0.6429
+2024-05-22 22:37:35,080 - video [INFO] - save model in Model0.pth
+2024-05-22 22:37:35,082 - video [INFO] - Epoch [7/40], Loss: 0.6164, trian_acc: 0.6637, train_mae: 0.6164
+2024-05-22 22:40:51,661 - video [INFO] - Test_Loss: 0.5970, test_acc: 0.6491, test_mae: 0.6423
+2024-05-22 22:51:09,193 - video [INFO] - save model in Model0.pth
+2024-05-22 22:51:09,195 - video [INFO] - Epoch [8/40], Loss: 0.6171, trian_acc: 0.6564, train_mae: 0.6173
+2024-05-22 22:54:29,335 - video [INFO] - Test_Loss: 0.6327, test_acc: 0.6491, test_mae: 0.6423
+2024-05-22 23:04:43,351 - video [INFO] - save model in Model0.pth
+2024-05-22 23:04:43,353 - video [INFO] - Epoch [9/40], Loss: 0.6144, trian_acc: 0.6689, train_mae: 0.6130
+2024-05-22 23:07:55,465 - video [INFO] - Test_Loss: 0.6515, test_acc: 0.6491, test_mae: 0.6408
+2024-05-22 23:18:01,868 - video [INFO] - save model in Model0.pth
+2024-05-22 23:18:01,870 - video [INFO] - Epoch [10/40], Loss: 0.6098, trian_acc: 0.6711, train_mae: 0.6105
+2024-05-22 23:21:18,606 - video [INFO] - Test_Loss: 0.6537, test_acc: 0.6491, test_mae: 0.6397
+2024-05-22 23:31:17,971 - video [INFO] - save model in Model0.pth
+2024-05-22 23:31:17,974 - video [INFO] - Epoch [11/40], Loss: 0.6105, trian_acc: 0.6769, train_mae: 0.6074
+2024-05-22 23:34:29,707 - video [INFO] - Test_Loss: 0.6255, test_acc: 0.6491, test_mae: 0.6389
+2024-05-22 23:44:24,119 - video [INFO] - save model in Model0.pth
+2024-05-22 23:44:24,122 - video [INFO] - Epoch [12/40], Loss: 0.6080, trian_acc: 0.6659, train_mae: 0.6058
+2024-05-22 23:47:37,854 - video [INFO] - Test_Loss: 0.6380, test_acc: 0.6491, test_mae: 0.6377
+2024-05-22 23:57:36,661 - video [INFO] - save model in Model0.pth
+2024-05-22 23:57:36,663 - video [INFO] - Epoch [13/40], Loss: 0.6115, trian_acc: 0.6645, train_mae: 0.6105
+2024-05-23 00:00:54,978 - video [INFO] - Test_Loss: 0.6270, test_acc: 0.6491, test_mae: 0.6372
+2024-05-23 00:11:58,363 - video [INFO] - save model in Model0.pth
+2024-05-23 00:11:58,367 - video [INFO] - Epoch [14/40], Loss: 0.6068, trian_acc: 0.6659, train_mae: 0.6068
+2024-05-23 00:15:12,306 - video [INFO] - Test_Loss: 0.6627, test_acc: 0.6491, test_mae: 0.6366
+2024-05-23 00:25:21,710 - video [INFO] - save model in Model0.pth
+2024-05-23 00:25:21,733 - video [INFO] - Epoch [15/40], Loss: 0.6020, trian_acc: 0.6659, train_mae: 0.6021
+2024-05-23 00:28:38,425 - video [INFO] - Test_Loss: 0.6376, test_acc: 0.6491, test_mae: 0.6348
+2024-05-23 00:38:47,021 - video [INFO] - save model in Model0.pth
+2024-05-23 00:38:47,042 - video [INFO] - Epoch [16/40], Loss: 0.5977, trian_acc: 0.6725, train_mae: 0.5997
+2024-05-23 00:42:02,778 - video [INFO] - Test_Loss: 0.6349, test_acc: 0.6491, test_mae: 0.6328
+2024-05-23 00:52:56,127 - video [INFO] - save model in Model0.pth
+2024-05-23 00:52:56,141 - video [INFO] - Epoch [17/40], Loss: 0.5961, trian_acc: 0.6703, train_mae: 0.5978
+2024-05-23 00:56:18,961 - video [INFO] - Test_Loss: 0.6291, test_acc: 0.6491, test_mae: 0.6310
+2024-05-23 01:06:38,444 - video [INFO] - save model in Model0.pth
+2024-05-23 01:06:38,447 - video [INFO] - Epoch [18/40], Loss: 0.5939, trian_acc: 0.6718, train_mae: 0.5930
+2024-05-23 01:09:55,990 - video [INFO] - Test_Loss: 0.6279, test_acc: 0.6491, test_mae: 0.6295
+2024-05-23 01:20:06,203 - video [INFO] - save model in Model0.pth
+2024-05-23 01:20:06,206 - video [INFO] - Epoch [19/40], Loss: 0.5892, trian_acc: 0.6813, train_mae: 0.5913
+2024-05-23 01:23:23,540 - video [INFO] - Test_Loss: 0.6210, test_acc: 0.6491, test_mae: 0.6256
+2024-05-23 01:33:28,318 - video [INFO] - save model in Model1.pth
+2024-05-23 01:33:28,321 - video [INFO] - Epoch [20/40], Loss: 0.5864, trian_acc: 0.6791, train_mae: 0.5871
+2024-05-23 01:36:44,263 - video [INFO] - Test_Loss: 0.6264, test_acc: 0.6491, test_mae: 0.6259
+2024-05-23 01:46:57,040 - video [INFO] - save model in Model1.pth
+2024-05-23 01:46:57,043 - video [INFO] - Epoch [21/40], Loss: 0.5905, trian_acc: 0.6769, train_mae: 0.5887
+2024-05-23 01:50:18,367 - video [INFO] - Test_Loss: 0.6366, test_acc: 0.6491, test_mae: 0.6189
+2024-05-23 02:00:25,763 - video [INFO] - save model in Model1.pth
+2024-05-23 02:00:25,765 - video [INFO] - Epoch [22/40], Loss: 0.5837, trian_acc: 0.6776, train_mae: 0.5833
+2024-05-23 02:03:44,100 - video [INFO] - Test_Loss: 0.6484, test_acc: 0.6360, test_mae: 0.6193
+2024-05-23 02:18:49,374 - video [INFO] - save model in Model1.pth
+2024-05-23 02:18:49,385 - video [INFO] - Epoch [23/40], Loss: 0.5752, trian_acc: 0.7025, train_mae: 0.5763
+2024-05-23 02:22:30,322 - video [INFO] - Test_Loss: 0.6358, test_acc: 0.6513, test_mae: 0.6152
+2024-05-23 02:32:54,312 - video [INFO] - save model in Model1.pth
+2024-05-23 02:32:54,333 - video [INFO] - Epoch [24/40], Loss: 0.5704, trian_acc: 0.6937, train_mae: 0.5723
+2024-05-23 02:36:15,891 - video [INFO] - Test_Loss: 0.6226, test_acc: 0.6491, test_mae: 0.6132
+2024-05-23 02:46:44,649 - video [INFO] - save model in Model1.pth
+2024-05-23 02:46:44,672 - video [INFO] - Epoch [25/40], Loss: 0.5687, trian_acc: 0.6886, train_mae: 0.5689
+2024-05-23 02:50:08,793 - video [INFO] - Test_Loss: 0.6189, test_acc: 0.6469, test_mae: 0.6066
+2024-05-23 03:01:20,532 - video [INFO] - save model in Model1.pth
+2024-05-23 03:01:20,547 - video [INFO] - Epoch [26/40], Loss: 0.5681, trian_acc: 0.6791, train_mae: 0.5683
+2024-05-23 03:05:09,050 - video [INFO] - Test_Loss: 0.6100, test_acc: 0.6513, test_mae: 0.6015
+2024-05-23 03:16:07,237 - video [INFO] - save model in Model1.pth
+2024-05-23 03:16:07,239 - video [INFO] - Epoch [27/40], Loss: 0.5713, trian_acc: 0.6901, train_mae: 0.5703
+2024-05-23 03:19:32,169 - video [INFO] - Test_Loss: 0.6206, test_acc: 0.6601, test_mae: 0.6035
+2024-05-23 03:29:49,549 - video [INFO] - save model in Model1.pth
+2024-05-23 03:29:49,551 - video [INFO] - Epoch [28/40], Loss: 0.5689, trian_acc: 0.6762, train_mae: 0.5684
+2024-05-23 03:33:10,067 - video [INFO] - Test_Loss: 0.5826, test_acc: 0.6689, test_mae: 0.5988
+2024-05-23 03:43:30,072 - video [INFO] - save model in Model1.pth
+2024-05-23 03:43:30,075 - video [INFO] - Epoch [29/40], Loss: 0.5597, trian_acc: 0.6791, train_mae: 0.5586
+2024-05-23 03:46:50,372 - video [INFO] - Test_Loss: 0.6068, test_acc: 0.6667, test_mae: 0.5950
+2024-05-23 03:56:54,998 - video [INFO] - save model in Model1.pth
+2024-05-23 03:56:55,000 - video [INFO] - Epoch [30/40], Loss: 0.5509, trian_acc: 0.6762, train_mae: 0.5555
+2024-05-23 04:00:18,379 - video [INFO] - Test_Loss: 0.5921, test_acc: 0.6711, test_mae: 0.5924
+2024-05-23 04:10:35,329 - video [INFO] - save model in Model1.pth
+2024-05-23 04:10:35,332 - video [INFO] - Epoch [31/40], Loss: 0.5557, trian_acc: 0.6886, train_mae: 0.5542
+2024-05-23 04:13:50,420 - video [INFO] - Test_Loss: 0.5626, test_acc: 0.6601, test_mae: 0.5894
+2024-05-23 04:24:03,655 - video [INFO] - save model in Model1.pth
+2024-05-23 04:24:03,662 - video [INFO] - Epoch [32/40], Loss: 0.5488, trian_acc: 0.6871, train_mae: 0.5502
+2024-05-23 04:27:22,569 - video [INFO] - Test_Loss: 0.5871, test_acc: 0.6798, test_mae: 0.5851
+2024-05-23 04:37:53,021 - video [INFO] - save model in Model1.pth
+2024-05-23 04:37:53,048 - video [INFO] - Epoch [33/40], Loss: 0.5452, trian_acc: 0.7039, train_mae: 0.5449
+2024-05-23 04:41:07,477 - video [INFO] - Test_Loss: 0.5825, test_acc: 0.6908, test_mae: 0.5874
+2024-05-23 04:51:33,920 - video [INFO] - save model in Model1.pth
+2024-05-23 04:51:33,945 - video [INFO] - Epoch [34/40], Loss: 0.5410, trian_acc: 0.7076, train_mae: 0.5460
+2024-05-23 04:54:53,641 - video [INFO] - Test_Loss: 0.5746, test_acc: 0.6952, test_mae: 0.5811
+2024-05-23 05:06:15,819 - video [INFO] - save model in Model1.pth
+2024-05-23 05:06:15,835 - video [INFO] - Epoch [35/40], Loss: 0.5449, trian_acc: 0.7039, train_mae: 0.5470
+2024-05-23 05:10:38,535 - video [INFO] - Test_Loss: 0.5697, test_acc: 0.6732, test_mae: 0.5859
+2024-05-23 05:22:36,312 - video [INFO] - save model in Model1.pth
+2024-05-23 05:22:36,315 - video [INFO] - Epoch [36/40], Loss: 0.5370, trian_acc: 0.7032, train_mae: 0.5379
+2024-05-23 05:26:13,224 - video [INFO] - Test_Loss: 0.5716, test_acc: 0.6820, test_mae: 0.5798
+2024-05-23 05:36:50,581 - video [INFO] - save model in Model1.pth
+2024-05-23 05:36:50,584 - video [INFO] - Epoch [37/40], Loss: 0.5364, trian_acc: 0.7054, train_mae: 0.5334
+2024-05-23 05:40:15,954 - video [INFO] - Test_Loss: 0.5819, test_acc: 0.7149, test_mae: 0.5720
+2024-05-23 05:50:38,288 - video [INFO] - save model in Model1.pth
+2024-05-23 05:50:38,290 - video [INFO] - Epoch [38/40], Loss: 0.5414, trian_acc: 0.7076, train_mae: 0.5358
+2024-05-23 05:54:00,654 - video [INFO] - Test_Loss: 0.5749, test_acc: 0.6952, test_mae: 0.5722
+2024-05-23 06:04:17,019 - video [INFO] - save model in Model1.pth
+2024-05-23 06:04:17,022 - video [INFO] - Epoch [39/40], Loss: 0.5268, trian_acc: 0.7120, train_mae: 0.5256
+2024-05-23 06:07:37,765 - video [INFO] - Test_Loss: 0.5931, test_acc: 0.6952, test_mae: 0.5708
+2024-05-23 06:17:47,958 - video [INFO] - save model in Model2.pth
+2024-05-23 06:17:47,961 - video [INFO] - Epoch [40/40], Loss: 0.5259, trian_acc: 0.7069, train_mae: 0.5248
+2024-05-23 06:21:06,094 - video [INFO] - Test_Loss: 0.5576, test_acc: 0.6996, test_mae: 0.5700
+2024-05-23 06:21:06,111 - video [INFO] - End training...
+2024-05-23 06:24:36,385 - video [INFO] - Test_Loss: 0.5586, test_acc: 0.7090, test_mae: 0.5395
+2024-05-23 06:24:36,449 - video [INFO] - Results saved to D:\Search\LLM\whisper-main\result.csv.
+2024-05-23 15:29:47,471 - video [INFO] - Loaded seq weights
+2024-05-23 15:29:47,631 - video [INFO] - Start training...
+2024-05-23 15:39:46,391 - video [INFO] - save model in Model0.pth
+2024-05-23 15:39:46,411 - video [INFO] - Epoch [1/10], Loss: 0.5258, trian_acc: 0.7164, train_mae: 0.5263
+2024-05-23 15:43:03,110 - video [INFO] - Test_Loss: 0.5640, test_acc: 0.7105, test_mae: 0.5637
+2024-05-23 15:53:01,922 - video [INFO] - save model in Model0.pth
+2024-05-23 15:53:01,924 - video [INFO] - Epoch [2/10], Loss: 0.5212, trian_acc: 0.7230, train_mae: 0.5189
+2024-05-23 15:56:17,255 - video [INFO] - Test_Loss: 0.5722, test_acc: 0.7083, test_mae: 0.5640
+2024-05-23 16:06:16,238 - video [INFO] - save model in Model0.pth
+2024-05-23 16:06:16,240 - video [INFO] - Epoch [3/10], Loss: 0.5229, trian_acc: 0.7171, train_mae: 0.5223
+2024-05-23 16:09:32,161 - video [INFO] - Test_Loss: 0.5398, test_acc: 0.7325, test_mae: 0.5511
+2024-05-23 16:19:42,975 - video [INFO] - save model in Model0.pth
+2024-05-23 16:19:42,977 - video [INFO] - Epoch [4/10], Loss: 0.5227, trian_acc: 0.7171, train_mae: 0.5243
+2024-05-23 16:22:58,720 - video [INFO] - Test_Loss: 0.5584, test_acc: 0.7281, test_mae: 0.5529
+2024-05-23 16:33:06,900 - video [INFO] - save model in Model0.pth
+2024-05-23 16:33:06,903 - video [INFO] - Epoch [5/10], Loss: 0.5204, trian_acc: 0.7171, train_mae: 0.5206
+2024-05-23 16:36:20,838 - video [INFO] - Test_Loss: 0.5561, test_acc: 0.7127, test_mae: 0.5588
+2024-05-23 16:46:28,033 - video [INFO] - save model in Model0.pth
+2024-05-23 16:46:28,036 - video [INFO] - Epoch [6/10], Loss: 0.5187, trian_acc: 0.7266, train_mae: 0.5221
+2024-05-23 16:49:44,785 - video [INFO] - Test_Loss: 0.5770, test_acc: 0.7303, test_mae: 0.5568
+2024-05-23 16:59:50,378 - video [INFO] - save model in Model0.pth
+2024-05-23 16:59:50,381 - video [INFO] - Epoch [7/10], Loss: 0.5160, trian_acc: 0.7193, train_mae: 0.5112
+2024-05-23 17:03:06,301 - video [INFO] - Test_Loss: 0.5825, test_acc: 0.7237, test_mae: 0.5541
+2024-05-23 17:13:28,887 - video [INFO] - save model in Model0.pth
+2024-05-23 17:13:28,890 - video [INFO] - Epoch [8/10], Loss: 0.5148, trian_acc: 0.7018, train_mae: 0.5132
+2024-05-23 17:16:44,618 - video [INFO] - Test_Loss: 0.5603, test_acc: 0.7083, test_mae: 0.5541
+2024-05-23 17:26:44,624 - video [INFO] - save model in Model0.pth
+2024-05-23 17:26:44,627 - video [INFO] - Epoch [9/10], Loss: 0.5101, trian_acc: 0.7222, train_mae: 0.5115
+2024-05-23 17:29:59,319 - video [INFO] - Test_Loss: 0.5415, test_acc: 0.7193, test_mae: 0.5389
+2024-05-23 17:40:03,751 - video [INFO] - save model in Model1.pth
+2024-05-23 17:40:03,754 - video [INFO] - Epoch [10/10], Loss: 0.5080, trian_acc: 0.7091, train_mae: 0.5093
+2024-05-23 17:43:17,164 - video [INFO] - Test_Loss: 0.5569, test_acc: 0.7105, test_mae: 0.5549
+2024-05-23 17:43:17,182 - video [INFO] - End training...
+2024-05-23 17:46:40,225 - video [INFO] - Test_Loss: 0.4932, test_acc: 0.7418, test_mae: 0.5120
+2024-05-23 17:46:40,284 - video [INFO] - Results saved to D:\Search\FT\video.csv.
+2024-05-23 19:35:08,729 - video [INFO] - Loaded seq weights
+2024-05-23 19:35:08,906 - video [INFO] - Start training...
+2024-05-23 19:45:16,010 - video [INFO] - save model in Model0.pth
+2024-05-23 19:45:16,029 - video [INFO] - Epoch [1/20], Loss: 0.5500, trian_acc: 0.7295, train_mae: 0.5025
+2024-05-23 19:48:34,163 - video [INFO] - Test_Loss: 0.5353, test_acc: 0.7325, test_mae: 0.5433
+2024-05-23 19:58:38,120 - video [INFO] - save model in Model0.pth
+2024-05-23 19:58:38,123 - video [INFO] - Epoch [2/20], Loss: 0.5484, trian_acc: 0.7354, train_mae: 0.5035
+2024-05-23 20:01:51,071 - video [INFO] - Test_Loss: 0.5253, test_acc: 0.6974, test_mae: 0.5432
+2024-05-23 20:11:56,466 - video [INFO] - save model in Model0.pth
+2024-05-23 20:11:56,469 - video [INFO] - Epoch [3/20], Loss: 0.5456, trian_acc: 0.7215, train_mae: 0.5007
+2024-05-23 20:15:12,228 - video [INFO] - Test_Loss: 0.5584, test_acc: 0.7237, test_mae: 0.5502
+2024-05-23 20:25:13,809 - video [INFO] - save model in Model0.pth
+2024-05-23 20:25:13,811 - video [INFO] - Epoch [4/20], Loss: 0.5451, trian_acc: 0.7266, train_mae: 0.5017
+2024-05-23 20:28:27,298 - video [INFO] - Test_Loss: 0.5279, test_acc: 0.7083, test_mae: 0.5412
+2024-05-23 20:38:30,935 - video [INFO] - save model in Model0.pth
+2024-05-23 20:38:30,937 - video [INFO] - Epoch [5/20], Loss: 0.5429, trian_acc: 0.7251, train_mae: 0.4952
+2024-05-23 20:41:47,850 - video [INFO] - Test_Loss: 0.5137, test_acc: 0.7083, test_mae: 0.5359
+2024-05-23 20:51:56,660 - video [INFO] - save model in Model0.pth
+2024-05-23 20:51:56,663 - video [INFO] - Epoch [6/20], Loss: 0.5374, trian_acc: 0.7390, train_mae: 0.4928
+2024-05-23 20:55:16,379 - video [INFO] - Test_Loss: 0.5098, test_acc: 0.7061, test_mae: 0.5302
+2024-05-23 21:08:49,344 - video [INFO] - save model in Model0.pth
+2024-05-23 21:08:49,364 - video [INFO] - Epoch [7/20], Loss: 0.5402, trian_acc: 0.7303, train_mae: 0.4928
+2024-05-23 21:13:34,479 - video [INFO] - Test_Loss: 0.5362, test_acc: 0.7193, test_mae: 0.5222
+2024-05-23 21:24:11,999 - video [INFO] - save model in Model0.pth
+2024-05-23 21:24:12,012 - video [INFO] - Epoch [8/20], Loss: 0.5384, trian_acc: 0.7259, train_mae: 0.4949
+2024-05-23 21:27:29,273 - video [INFO] - Test_Loss: 0.5441, test_acc: 0.7237, test_mae: 0.5292
+2024-05-23 21:37:42,531 - video [INFO] - save model in Model0.pth
+2024-05-23 21:37:42,534 - video [INFO] - Epoch [9/20], Loss: 0.5309, trian_acc: 0.7259, train_mae: 0.4897
+2024-05-23 21:40:57,222 - video [INFO] - Test_Loss: 0.5606, test_acc: 0.7259, test_mae: 0.5414
+2024-05-23 21:51:00,286 - video [INFO] - save model in Model1.pth
+2024-05-23 21:51:00,288 - video [INFO] - Epoch [10/20], Loss: 0.5273, trian_acc: 0.7244, train_mae: 0.4874
+2024-05-23 21:54:13,583 - video [INFO] - Test_Loss: 0.5316, test_acc: 0.7237, test_mae: 0.5324
+2024-05-23 22:04:18,797 - video [INFO] - save model in Model1.pth
+2024-05-23 22:04:18,799 - video [INFO] - Epoch [11/20], Loss: 0.5405, trian_acc: 0.7135, train_mae: 0.4923
+2024-05-23 22:07:33,884 - video [INFO] - Test_Loss: 0.5387, test_acc: 0.7303, test_mae: 0.5353
+2024-05-23 22:17:35,124 - video [INFO] - save model in Model1.pth
+2024-05-23 22:17:35,127 - video [INFO] - Epoch [12/20], Loss: 0.5342, trian_acc: 0.7398, train_mae: 0.4853
+2024-05-23 22:20:53,438 - video [INFO] - Test_Loss: 0.5429, test_acc: 0.7281, test_mae: 0.5309
+2024-05-23 22:31:01,857 - video [INFO] - save model in Model1.pth
+2024-05-23 22:31:01,860 - video [INFO] - Epoch [13/20], Loss: 0.5174, trian_acc: 0.7427, train_mae: 0.4762
+2024-05-23 22:34:18,390 - video [INFO] - Test_Loss: 0.5515, test_acc: 0.7105, test_mae: 0.5197
+2024-05-23 22:44:30,791 - video [INFO] - save model in Model1.pth
+2024-05-23 22:44:30,800 - video [INFO] - Epoch [14/20], Loss: 0.5314, trian_acc: 0.7273, train_mae: 0.4825
+2024-05-23 22:47:47,367 - video [INFO] - Test_Loss: 0.5422, test_acc: 0.7018, test_mae: 0.5342
+2024-05-23 22:58:02,340 - video [INFO] - save model in Model1.pth
+2024-05-23 22:58:02,366 - video [INFO] - Epoch [15/20], Loss: 0.5281, trian_acc: 0.7405, train_mae: 0.4810
+2024-05-23 23:01:23,990 - video [INFO] - Test_Loss: 0.5335, test_acc: 0.7018, test_mae: 0.5281
+2024-05-23 23:11:45,665 - video [INFO] - save model in Model1.pth
+2024-05-23 23:11:45,696 - video [INFO] - Epoch [16/20], Loss: 0.5281, trian_acc: 0.7346, train_mae: 0.4772
+2024-05-23 23:15:08,951 - video [INFO] - Test_Loss: 0.5439, test_acc: 0.7149, test_mae: 0.5178
+2024-05-23 23:26:39,538 - video [INFO] - save model in Model1.pth
+2024-05-23 23:26:39,548 - video [INFO] - Epoch [17/20], Loss: 0.5241, trian_acc: 0.7500, train_mae: 0.4764
+2024-05-23 23:29:59,854 - video [INFO] - Test_Loss: 0.5231, test_acc: 0.7149, test_mae: 0.5215
+2024-05-23 23:40:18,048 - video [INFO] - save model in Model1.pth
+2024-05-23 23:40:18,051 - video [INFO] - Epoch [18/20], Loss: 0.5092, trian_acc: 0.7434, train_mae: 0.4632
+2024-05-23 23:43:34,587 - video [INFO] - Test_Loss: 0.5480, test_acc: 0.7237, test_mae: 0.5358
+2024-05-23 23:53:47,977 - video [INFO] - save model in Model1.pth
+2024-05-23 23:53:47,980 - video [INFO] - Epoch [19/20], Loss: 0.5180, trian_acc: 0.7281, train_mae: 0.4732
+2024-05-23 23:57:04,114 - video [INFO] - Test_Loss: 0.5371, test_acc: 0.7105, test_mae: 0.5188
+2024-05-24 00:07:14,100 - video [INFO] - save model in Model2.pth
+2024-05-24 00:07:14,102 - video [INFO] - Epoch [20/20], Loss: 0.5206, trian_acc: 0.7573, train_mae: 0.4703
+2024-05-24 00:10:25,257 - video [INFO] - Test_Loss: 0.5224, test_acc: 0.7127, test_mae: 0.5174
+2024-05-24 00:10:25,278 - video [INFO] - End training...
+2024-05-24 00:13:47,590 - video [INFO] - Test_Loss: 0.5080, test_acc: 0.7418, test_mae: 0.5073
+2024-05-24 00:13:47,657 - video [INFO] - Results saved to D:\Search\FT\video.csv.
+2024-05-25 20:02:20,566 - video [INFO] - Loaded seq weights
+2024-05-25 20:02:20,737 - video [INFO] - Start training...
+2024-05-25 20:02:57,602 - video [INFO] - Loaded seq weights
+2024-05-25 20:02:57,794 - video [INFO] - Start training...
+2024-05-25 20:03:20,418 - video [INFO] - Loaded seq weights
+2024-05-25 20:03:20,611 - video [INFO] - Start training...
+2024-05-25 20:03:58,701 - video [INFO] - Loaded seq weights
+2024-05-25 20:03:58,862 - video [INFO] - Start training...
+2024-05-25 20:04:37,529 - video [INFO] - Loaded seq weights
+2024-05-25 20:04:37,692 - video [INFO] - Start training...
+2024-05-25 20:05:39,440 - video [INFO] - Loaded seq weights
+2024-05-25 20:05:39,601 - video [INFO] - Start training...
+2024-05-25 20:09:44,291 - video [INFO] - save model in MOSIModel0.pth
+2024-05-25 20:09:44,301 - video [INFO] - Epoch [1/20], Loss: 1.4335, trian_acc: 0.5070, train_mae: 0.8530
+2024-05-25 20:10:26,801 - video [INFO] - Test_Loss: 1.4555, test_acc: 0.4716, test_mae: 0.8230
+2024-05-25 20:12:34,194 - video [INFO] - Loaded seq weights
+2024-05-25 20:12:34,351 - video [INFO] - Start training...
+2024-05-25 20:16:38,058 - video [INFO] - save model in MOSIModel0.pth
+2024-05-25 20:16:38,061 - video [INFO] - Epoch [1/40], Loss: 1.3756, trian_acc: 0.5249, train_mae: 0.8172
+2024-05-25 20:17:19,882 - video [INFO] - Test_Loss: 1.4442, test_acc: 0.4891, test_mae: 0.8376
+2024-05-25 20:21:23,410 - video [INFO] - save model in MOSIModel0.pth
+2024-05-25 20:21:23,413 - video [INFO] - Epoch [2/40], Loss: 1.3625, trian_acc: 0.5296, train_mae: 0.8190
+2024-05-25 20:22:05,585 - video [INFO] - Test_Loss: 1.4625, test_acc: 0.4672, test_mae: 0.8315
+2024-05-25 20:26:10,340 - video [INFO] - save model in MOSIModel0.pth
+2024-05-25 20:26:10,343 - video [INFO] - Epoch [3/40], Loss: 1.3928, trian_acc: 0.5148, train_mae: 0.8167
+2024-05-25 20:26:52,437 - video [INFO] - Test_Loss: 1.4415, test_acc: 0.5415, test_mae: 0.8102
+2024-05-25 20:31:00,625 - video [INFO] - save model in MOSIModel0.pth
+2024-05-25 20:31:00,628 - video [INFO] - Epoch [4/40], Loss: 1.3775, trian_acc: 0.5319, train_mae: 0.8129
+2024-05-25 20:31:43,136 - video [INFO] - Test_Loss: 1.4616, test_acc: 0.5284, test_mae: 0.8073
+2024-05-25 20:35:49,975 - video [INFO] - save model in MOSIModel0.pth
+2024-05-25 20:35:49,978 - video [INFO] - Epoch [5/40], Loss: 1.3546, trian_acc: 0.5498, train_mae: 0.7931
+2024-05-25 20:36:31,655 - video [INFO] - Test_Loss: 1.4431, test_acc: 0.5153, test_mae: 0.8257
+2024-05-25 20:40:37,166 - video [INFO] - save model in MOSIModel0.pth
+2024-05-25 20:40:37,169 - video [INFO] - Epoch [6/40], Loss: 1.3808, trian_acc: 0.5358, train_mae: 0.8059
+2024-05-25 20:41:19,982 - video [INFO] - Test_Loss: 1.4227, test_acc: 0.5415, test_mae: 0.8095
+2024-05-25 20:45:26,034 - video [INFO] - save model in MOSIModel0.pth
+2024-05-25 20:45:26,037 - video [INFO] - Epoch [7/40], Loss: 1.3760, trian_acc: 0.5382, train_mae: 0.8029
+2024-05-25 20:46:08,276 - video [INFO] - Test_Loss: 1.4602, test_acc: 0.5153, test_mae: 0.8448
+2024-05-25 20:50:14,183 - video [INFO] - save model in MOSIModel0.pth
+2024-05-25 20:50:14,186 - video [INFO] - Epoch [8/40], Loss: 1.3767, trian_acc: 0.5374, train_mae: 0.7966
+2024-05-25 20:50:56,181 - video [INFO] - Test_Loss: 1.4479, test_acc: 0.4978, test_mae: 0.8283
+2024-05-25 20:55:17,476 - video [INFO] - save model in MOSIModel0.pth
+2024-05-25 20:55:17,478 - video [INFO] - Epoch [9/40], Loss: 1.3646, trian_acc: 0.5366, train_mae: 0.8039
+2024-05-25 20:56:00,267 - video [INFO] - Test_Loss: 1.4576, test_acc: 0.5109, test_mae: 0.8268
+2024-05-25 21:00:08,363 - video [INFO] - save model in MOSIModel1.pth
+2024-05-25 21:00:08,366 - video [INFO] - Epoch [10/40], Loss: 1.3739, trian_acc: 0.5304, train_mae: 0.8032
+2024-05-25 21:00:50,766 - video [INFO] - Test_Loss: 1.4653, test_acc: 0.5153, test_mae: 0.8275
+2024-05-25 21:04:59,826 - video [INFO] - save model in MOSIModel1.pth
+2024-05-25 21:04:59,829 - video [INFO] - Epoch [11/40], Loss: 1.3739, trian_acc: 0.5569, train_mae: 0.7983
+2024-05-25 21:05:42,479 - video [INFO] - Test_Loss: 1.4363, test_acc: 0.5109, test_mae: 0.8113
+2024-05-25 21:09:50,469 - video [INFO] - save model in MOSIModel1.pth
+2024-05-25 21:09:50,472 - video [INFO] - Epoch [12/40], Loss: 1.3784, trian_acc: 0.5522, train_mae: 0.7895
+2024-05-25 21:10:33,194 - video [INFO] - Test_Loss: 1.4448, test_acc: 0.5284, test_mae: 0.8115
+2024-05-25 21:14:39,868 - video [INFO] - save model in MOSIModel1.pth
+2024-05-25 21:14:39,870 - video [INFO] - Epoch [13/40], Loss: 1.3194, trian_acc: 0.5530, train_mae: 0.7936
+2024-05-25 21:15:22,684 - video [INFO] - Test_Loss: 1.4613, test_acc: 0.5328, test_mae: 0.8153
+2024-05-25 21:19:30,850 - video [INFO] - save model in MOSIModel1.pth
+2024-05-25 21:19:30,852 - video [INFO] - Epoch [14/40], Loss: 1.3636, trian_acc: 0.5405, train_mae: 0.7871
+2024-05-25 21:20:12,780 - video [INFO] - Test_Loss: 1.4388, test_acc: 0.5415, test_mae: 0.8091
+2024-05-25 21:24:19,510 - video [INFO] - save model in MOSIModel1.pth
+2024-05-25 21:24:19,513 - video [INFO] - Epoch [15/40], Loss: 1.3406, trian_acc: 0.5522, train_mae: 0.7877
+2024-05-25 21:25:02,088 - video [INFO] - Test_Loss: 1.4614, test_acc: 0.5022, test_mae: 0.8342
+2024-05-25 21:29:11,520 - video [INFO] - save model in MOSIModel1.pth
+2024-05-25 21:29:11,523 - video [INFO] - Epoch [16/40], Loss: 1.3396, trian_acc: 0.5600, train_mae: 0.7914
+2024-05-25 21:29:54,996 - video [INFO] - Test_Loss: 1.4236, test_acc: 0.5066, test_mae: 0.7961
+2024-05-25 21:34:03,161 - video [INFO] - save model in MOSIModel1.pth
+2024-05-25 21:34:03,164 - video [INFO] - Epoch [17/40], Loss: 1.3454, trian_acc: 0.5623, train_mae: 0.7779
+2024-05-25 21:34:45,869 - video [INFO] - Test_Loss: 1.4663, test_acc: 0.4847, test_mae: 0.8359
+2024-05-25 21:38:53,983 - video [INFO] - save model in MOSIModel1.pth
+2024-05-25 21:38:53,986 - video [INFO] - Epoch [18/40], Loss: 1.3875, trian_acc: 0.5600, train_mae: 0.7878
+2024-05-25 21:39:36,181 - video [INFO] - Test_Loss: 1.4438, test_acc: 0.4803, test_mae: 0.8181
+2024-05-25 21:44:26,522 - video [INFO] - save model in MOSIModel1.pth
+2024-05-25 21:44:26,524 - video [INFO] - Epoch [19/40], Loss: 1.3330, trian_acc: 0.5779, train_mae: 0.7771
+2024-05-25 21:45:12,502 - video [INFO] - Test_Loss: 1.4492, test_acc: 0.5240, test_mae: 0.8009
+2024-05-25 21:49:36,831 - video [INFO] - save model in MOSIModel2.pth
+2024-05-25 21:49:36,834 - video [INFO] - Epoch [20/40], Loss: 1.3169, trian_acc: 0.5748, train_mae: 0.7789
+2024-05-25 21:50:21,999 - video [INFO] - Test_Loss: 1.4605, test_acc: 0.5109, test_mae: 0.8343
+2024-05-25 21:54:41,047 - video [INFO] - save model in MOSIModel2.pth
+2024-05-25 21:54:41,049 - video [INFO] - Epoch [21/40], Loss: 1.3329, trian_acc: 0.5631, train_mae: 0.7838
+2024-05-25 21:55:25,061 - video [INFO] - Test_Loss: 1.4326, test_acc: 0.5066, test_mae: 0.8065
+2024-05-25 21:59:37,811 - video [INFO] - save model in MOSIModel2.pth
+2024-05-25 21:59:37,814 - video [INFO] - Epoch [22/40], Loss: 1.3608, trian_acc: 0.5522, train_mae: 0.7864
+2024-05-25 22:00:20,594 - video [INFO] - Test_Loss: 1.4789, test_acc: 0.4978, test_mae: 0.8345
+2024-05-25 22:04:32,332 - video [INFO] - save model in MOSIModel2.pth
+2024-05-25 22:04:32,335 - video [INFO] - Epoch [23/40], Loss: 1.3280, trian_acc: 0.5569, train_mae: 0.7737
+2024-05-25 22:05:15,500 - video [INFO] - Test_Loss: 1.4320, test_acc: 0.5328, test_mae: 0.8115
+2024-05-25 22:09:27,339 - video [INFO] - save model in MOSIModel2.pth
+2024-05-25 22:09:27,341 - video [INFO] - Epoch [24/40], Loss: 1.3515, trian_acc: 0.5763, train_mae: 0.7693
+2024-05-25 22:10:10,795 - video [INFO] - Test_Loss: 1.4440, test_acc: 0.5153, test_mae: 0.8211
+2024-05-25 22:14:22,019 - video [INFO] - save model in MOSIModel2.pth
+2024-05-25 22:14:22,022 - video [INFO] - Epoch [25/40], Loss: 1.3145, trian_acc: 0.5849, train_mae: 0.7708
+2024-05-25 22:15:05,474 - video [INFO] - Test_Loss: 1.4331, test_acc: 0.5328, test_mae: 0.8159
+2024-05-25 22:19:16,687 - video [INFO] - save model in MOSIModel2.pth
+2024-05-25 22:19:16,690 - video [INFO] - Epoch [26/40], Loss: 1.3072, trian_acc: 0.5732, train_mae: 0.7706
+2024-05-25 22:19:59,958 - video [INFO] - Test_Loss: 1.4668, test_acc: 0.5066, test_mae: 0.8190
+2024-05-25 22:24:10,028 - video [INFO] - save model in MOSIModel2.pth
+2024-05-25 22:24:10,031 - video [INFO] - Epoch [27/40], Loss: 1.3313, trian_acc: 0.5553, train_mae: 0.7887
+2024-05-25 22:24:53,260 - video [INFO] - Test_Loss: 1.4592, test_acc: 0.5197, test_mae: 0.8276
+2024-05-25 22:29:05,581 - video [INFO] - save model in MOSIModel2.pth
+2024-05-25 22:29:05,584 - video [INFO] - Epoch [28/40], Loss: 1.3333, trian_acc: 0.5685, train_mae: 0.7776
+2024-05-25 22:29:49,396 - video [INFO] - Test_Loss: 1.4417, test_acc: 0.5197, test_mae: 0.8103
+2024-05-25 22:35:13,447 - video [INFO] - save model in MOSIModel2.pth
+2024-05-25 22:35:13,450 - video [INFO] - Epoch [29/40], Loss: 1.3126, trian_acc: 0.5826, train_mae: 0.7635
+2024-05-25 22:36:05,881 - video [INFO] - Test_Loss: 1.4244, test_acc: 0.5153, test_mae: 0.8250
+2024-05-25 22:40:52,788 - video [INFO] - save model in MOSIModel3.pth
+2024-05-25 22:40:52,790 - video [INFO] - Epoch [30/40], Loss: 1.3330, trian_acc: 0.5701, train_mae: 0.7796
+2024-05-25 22:41:39,773 - video [INFO] - Test_Loss: 1.4477, test_acc: 0.5153, test_mae: 0.8039
+2024-05-25 22:46:10,363 - video [INFO] - save model in MOSIModel3.pth
+2024-05-25 22:46:10,365 - video [INFO] - Epoch [31/40], Loss: 1.3311, trian_acc: 0.5701, train_mae: 0.7712
+2024-05-25 22:46:56,056 - video [INFO] - Test_Loss: 1.4311, test_acc: 0.5022, test_mae: 0.8080
+2024-05-25 22:51:18,547 - video [INFO] - save model in MOSIModel3.pth
+2024-05-25 22:51:18,549 - video [INFO] - Epoch [32/40], Loss: 1.2966, trian_acc: 0.5911, train_mae: 0.7575
+2024-05-25 22:52:02,746 - video [INFO] - Test_Loss: 1.4356, test_acc: 0.5197, test_mae: 0.8214
+2024-05-25 22:56:21,423 - video [INFO] - save model in MOSIModel3.pth
+2024-05-25 22:56:21,426 - video [INFO] - Epoch [33/40], Loss: 1.3419, trian_acc: 0.5966, train_mae: 0.7583
+2024-05-25 22:57:05,242 - video [INFO] - Test_Loss: 1.4706, test_acc: 0.5022, test_mae: 0.8264
+2024-05-25 23:01:20,805 - video [INFO] - save model in MOSIModel3.pth
+2024-05-25 23:01:20,808 - video [INFO] - Epoch [34/40], Loss: 1.3325, trian_acc: 0.5857, train_mae: 0.7629
+2024-05-25 23:02:04,697 - video [INFO] - Test_Loss: 1.4554, test_acc: 0.5022, test_mae: 0.8166
+2024-05-25 23:06:18,346 - video [INFO] - save model in MOSIModel3.pth
+2024-05-25 23:06:18,348 - video [INFO] - Epoch [35/40], Loss: 1.3259, trian_acc: 0.5864, train_mae: 0.7745
+2024-05-25 23:07:02,011 - video [INFO] - Test_Loss: 1.4338, test_acc: 0.5240, test_mae: 0.7995
+2024-05-25 23:11:17,298 - video [INFO] - save model in MOSIModel3.pth
+2024-05-25 23:11:17,301 - video [INFO] - Epoch [36/40], Loss: 1.3321, trian_acc: 0.5857, train_mae: 0.7612
+2024-05-25 23:12:01,288 - video [INFO] - Test_Loss: 1.4170, test_acc: 0.5197, test_mae: 0.8158
+2024-05-25 23:16:20,511 - video [INFO] - save model in MOSIModel3.pth
+2024-05-25 23:16:20,514 - video [INFO] - Epoch [37/40], Loss: 1.3542, trian_acc: 0.5888, train_mae: 0.7625
+2024-05-25 23:17:05,242 - video [INFO] - Test_Loss: 1.4222, test_acc: 0.5022, test_mae: 0.8060
+2024-05-25 23:21:29,550 - video [INFO] - save model in MOSIModel3.pth
+2024-05-25 23:21:29,553 - video [INFO] - Epoch [38/40], Loss: 1.3328, trian_acc: 0.6005, train_mae: 0.7593
+2024-05-25 23:22:14,359 - video [INFO] - Test_Loss: 1.4602, test_acc: 0.4716, test_mae: 0.8358
+2024-05-25 23:27:43,464 - video [INFO] - save model in MOSIModel3.pth
+2024-05-25 23:27:43,467 - video [INFO] - Epoch [39/40], Loss: 1.3324, trian_acc: 0.5880, train_mae: 0.7543
+2024-05-25 23:28:56,211 - video [INFO] - Test_Loss: 1.4398, test_acc: 0.5240, test_mae: 0.8313
+2024-05-25 23:34:46,655 - video [INFO] - save model in MOSIModel4.pth
+2024-05-25 23:34:46,658 - video [INFO] - Epoch [40/40], Loss: 1.3202, trian_acc: 0.5872, train_mae: 0.7580
+2024-05-25 23:35:40,079 - video [INFO] - Test_Loss: 1.4440, test_acc: 0.5109, test_mae: 0.8223
+2024-05-25 23:35:40,113 - video [INFO] - End training...
+2024-05-25 23:38:18,351 - video [INFO] - Test_Loss: 1.4480, test_acc: 0.4869, test_mae: 0.8729
+2024-05-25 23:38:18,405 - video [INFO] - Results saved to D:\Search\FT\video.csv.
+2024-05-27 16:32:02,159 - video [INFO] - Start training...
+2024-05-27 16:32:55,171 - video [INFO] - Start training...
+2024-05-27 16:33:45,939 - video [INFO] - Start training...
+2024-05-27 16:38:46,159 - video [INFO] - Start training...
+2024-05-27 16:40:42,532 - video [INFO] - Start training...
+2024-05-27 16:41:54,163 - video [INFO] - Start training...
+2024-05-27 16:44:37,134 - video [INFO] - Start training...
+2024-05-27 16:45:08,982 - video [INFO] - Start training...
+2024-05-27 16:45:35,047 - video [INFO] - Start training...
+2024-05-27 17:29:35,795 - video [INFO] - Start training...
+2024-05-27 18:09:07,629 - video [INFO] - Start training...
+2024-05-27 19:01:13,505 - video [INFO] - Start training...
+2024-05-27 19:01:52,605 - video [INFO] - Start training...
+2024-05-27 19:11:20,844 - video [INFO] - Start training...
+2024-05-27 19:13:52,578 - video [INFO] - Start training...
+2024-05-27 19:25:49,099 - video [INFO] - save model in MAEMOSIModel0.pth
+2024-05-27 19:25:49,102 - video [INFO] - Epoch [1/40], Loss: 1.3392, trian_acc: 0.5148, train_mae: 0.8178
+2024-05-27 19:27:54,439 - video [INFO] - Test_Loss: 1.4284, test_acc: 0.5415, test_mae: 0.7961
+2024-05-27 19:39:45,856 - video [INFO] - save model in MAEMOSIModel0.pth
+2024-05-27 19:39:45,859 - video [INFO] - Epoch [2/40], Loss: 1.3360, trian_acc: 0.5343, train_mae: 0.8071
+2024-05-27 19:41:47,152 - video [INFO] - Test_Loss: 1.4252, test_acc: 0.5415, test_mae: 0.7921
+2024-05-27 19:54:48,808 - video [INFO] - Loaded seq weights
+2024-05-27 19:54:49,070 - video [INFO] - Start training...
+2024-05-27 20:06:21,025 - video [INFO] - save model in MAEMOSIModel0.pth
+2024-05-27 20:06:21,028 - video [INFO] - Epoch [1/40], Loss: 1.3425, trian_acc: 0.5171, train_mae: 0.8171
+2024-05-27 20:08:20,510 - video [INFO] - Test_Loss: 1.4062, test_acc: 0.5415, test_mae: 0.7912
+2024-05-27 20:22:48,185 - video [INFO] - Loaded seq weights
+2024-05-27 20:22:48,457 - video [INFO] - Start training...
+2024-05-27 20:24:54,909 - video [INFO] - Start training...
+2024-05-27 20:33:25,859 - video [INFO] - Start training...
+2024-05-27 20:36:58,860 - video [INFO] - Start training...
+2024-05-27 20:39:12,552 - video [INFO] - Start training...
+2024-05-27 20:41:24,285 - video [INFO] - Start training...
+2024-05-27 20:42:26,098 - video [INFO] - Start training...
+2024-05-27 20:44:27,447 - video [INFO] - Start training...
+2024-05-27 20:45:27,352 - video [INFO] - Start training...
+2024-05-27 20:45:58,278 - video [INFO] - Start training...
+2024-05-27 20:47:52,154 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 20:47:55,035 - video [INFO] - Epoch [1/40], Loss: 0.0041, trian_acc: 0.0000, train_mae: 1.1565
+2024-05-27 20:57:23,966 - video [INFO] - Start training...
+2024-05-27 20:57:39,965 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 20:58:54,339 - video [INFO] - Loaded seq weights
+2024-05-27 20:59:04,423 - video [INFO] - Start training...
+2024-05-27 20:59:17,593 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 20:59:30,870 - video [INFO] - Epoch [1/40], Loss: 0.0052, trian_acc: 0.0000, train_mae: 1.1208
+2024-05-27 20:59:32,494 - video [INFO] - Test_Loss: 0.0110, test_acc: 0.5000, test_mae: 1.0000
+2024-05-27 20:59:34,426 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 20:59:34,429 - video [INFO] - Epoch [2/40], Loss: 0.0044, trian_acc: 0.0000, train_mae: 1.1456
+2024-05-27 20:59:35,612 - video [INFO] - Test_Loss: 0.0161, test_acc: 1.0000, test_mae: 0.9492
+2024-05-27 20:59:37,910 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 20:59:37,913 - video [INFO] - Epoch [3/40], Loss: 0.0040, trian_acc: 0.0000, train_mae: 0.9656
+2024-05-27 20:59:39,106 - video [INFO] - Test_Loss: 0.0087, test_acc: 0.5000, test_mae: 0.5000
+2024-05-27 20:59:41,363 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 20:59:41,367 - video [INFO] - Epoch [4/40], Loss: 0.0043, trian_acc: 0.5000, train_mae: 1.0574
+2024-05-27 20:59:43,091 - video [INFO] - Test_Loss: 0.0070, test_acc: 0.5000, test_mae: 0.5000
+2024-05-27 20:59:45,480 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 20:59:45,483 - video [INFO] - Epoch [5/40], Loss: 0.0042, trian_acc: 0.5000, train_mae: 1.0978
+2024-05-27 20:59:47,306 - video [INFO] - Test_Loss: 0.0096, test_acc: 0.5000, test_mae: 1.0000
+2024-05-27 20:59:49,658 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 20:59:49,662 - video [INFO] - Epoch [6/40], Loss: 0.0041, trian_acc: 0.5000, train_mae: 0.9366
+2024-05-27 20:59:51,052 - video [INFO] - Test_Loss: 0.0009, test_acc: 0.5000, test_mae: 0.1000
+2024-05-27 20:59:53,870 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 20:59:53,875 - video [INFO] - Epoch [7/40], Loss: 0.0031, trian_acc: 0.0000, train_mae: 0.7625
+2024-05-27 21:00:05,245 - video [INFO] - Loaded seq weights
+2024-05-27 21:00:05,527 - video [INFO] - Start training...
+2024-05-27 21:00:10,252 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 21:00:10,272 - video [INFO] - Epoch [1/4], Loss: 0.0043, trian_acc: 0.5000, train_mae: 0.9584
+2024-05-27 21:00:11,609 - video [INFO] - Test_Loss: 0.0139, test_acc: 0.5000, test_mae: 1.0000
+2024-05-27 21:00:14,032 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 21:00:14,034 - video [INFO] - Epoch [2/4], Loss: 0.0028, trian_acc: 0.0000, train_mae: 0.6900
+2024-05-27 21:00:15,846 - video [INFO] - Test_Loss: 0.0134, test_acc: 0.0000, test_mae: 1.0443
+2024-05-27 21:00:19,464 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 21:00:19,466 - video [INFO] - Epoch [3/4], Loss: 0.0039, trian_acc: 1.0000, train_mae: 0.7927
+2024-05-27 21:00:22,139 - video [INFO] - Test_Loss: 0.0113, test_acc: 0.5000, test_mae: 0.7000
+2024-05-27 21:00:25,676 - video [INFO] - save model in RoLA_MOSI_Model0.pth
+2024-05-27 21:00:25,678 - video [INFO] - Epoch [4/4], Loss: 0.0040, trian_acc: 0.0000, train_mae: 1.0999
+2024-05-27 21:00:27,014 - video [INFO] - Test_Loss: 0.0093, test_acc: 0.0000, test_mae: 0.6688
+2024-05-27 21:00:27,017 - video [INFO] - End training...
+2024-05-27 21:00:28,458 - video [INFO] - Test_Loss: 0.0038, test_acc: 0.5000, test_mae: 0.7000
+2024-05-27 21:00:28,476 - video [INFO] - Results saved to D:\Search\FT\video.csv.
+2024-05-27 21:06:45,850 - video [INFO] - Loaded seq weights
+2024-05-27 21:06:46,126 - video [INFO] - Start training...
+2024-05-27 21:07:33,496 - video [INFO] - save model in MAEMOSIModel0.pth
+2024-05-27 21:10:22,801 - video [INFO] - Loaded seq weights
+2024-05-27 21:10:23,073 - video [INFO] - Start training...
+2024-05-27 21:10:31,833 - video [INFO] - save model in MOSI_mae_0.pth
+2024-05-27 21:10:31,835 - video [INFO] - Epoch [1/40], Loss: 0.0273, trian_acc: 0.5625, train_mae: 0.7836
+2024-05-27 21:11:11,112 - video [INFO] - Loaded seq weights
+2024-05-27 21:11:11,373 - video [INFO] - Start training...
+2024-05-27 21:22:51,541 - video [INFO] - save model in MOSI_mae_0.pth
+2024-05-27 21:22:51,544 - video [INFO] - Epoch [1/40], Loss: 1.3337, trian_acc: 0.5195, train_mae: 0.8157
+2024-05-27 21:24:51,812 - video [INFO] - Test_Loss: 1.4299, test_acc: 0.5415, test_mae: 0.7905

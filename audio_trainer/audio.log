@@ -1,0 +1,105 @@
+2024-05-25 23:42:08,882 - LLM [INFO] - succeed loading weights
+2024-05-25 23:42:08,886 - LLM [INFO] - Start training...
+2024-05-25 23:42:51,170 - LLM [INFO] - succeed loading weights
+2024-05-25 23:42:51,174 - LLM [INFO] - Start training...
+2024-05-25 23:51:39,103 - LLM [INFO] - save model in MOSIModel0.pth
+2024-05-25 23:51:39,105 - LLM [INFO] - Epoch [1/30], Loss: 1.2651, trian_acc: 0.5748, train_mae: 0.7577
+2024-05-25 23:53:14,868 - LLM [INFO] - Test_Loss: 1.3696, test_acc: 0.5590, test_mae: 0.7459
+2024-05-26 00:03:11,401 - LLM [INFO] - save model in MOSIModel0.pth
+2024-05-26 00:03:11,404 - LLM [INFO] - Epoch [2/30], Loss: 1.1710, trian_acc: 0.6433, train_mae: 0.6619
+2024-05-26 00:04:50,270 - LLM [INFO] - Test_Loss: 1.3464, test_acc: 0.6026, test_mae: 0.7198
+2024-05-26 00:14:07,435 - LLM [INFO] - save model in MOSIModel0.pth
+2024-05-26 00:14:07,437 - LLM [INFO] - Epoch [3/30], Loss: 1.0959, trian_acc: 0.6900, train_mae: 0.5967
+2024-05-26 00:15:33,356 - LLM [INFO] - Test_Loss: 1.2703, test_acc: 0.6463, test_mae: 0.6676
+2024-05-26 00:23:45,494 - LLM [INFO] - save model in MOSIModel0.pth
+2024-05-26 00:23:45,496 - LLM [INFO] - Epoch [4/30], Loss: 1.0261, trian_acc: 0.7329, train_mae: 0.5327
+2024-05-26 00:25:11,412 - LLM [INFO] - Test_Loss: 1.2927, test_acc: 0.6856, test_mae: 0.6892
+2024-05-26 00:33:24,683 - LLM [INFO] - save model in MOSIModel0.pth
+2024-05-26 00:33:24,686 - LLM [INFO] - Epoch [5/30], Loss: 0.9909, trian_acc: 0.7570, train_mae: 0.4990
+2024-05-26 00:34:50,835 - LLM [INFO] - Test_Loss: 1.3012, test_acc: 0.6245, test_mae: 0.7021
+2024-05-26 00:43:03,266 - LLM [INFO] - save model in MOSIModel0.pth
+2024-05-26 00:43:03,268 - LLM [INFO] - Epoch [6/30], Loss: 0.9447, trian_acc: 0.7773, train_mae: 0.4598
+2024-05-26 00:44:29,241 - LLM [INFO] - Test_Loss: 1.3286, test_acc: 0.6681, test_mae: 0.7011
+2024-05-26 00:52:41,586 - LLM [INFO] - save model in MOSIModel0.pth
+2024-05-26 00:52:41,592 - LLM [INFO] - Epoch [7/30], Loss: 0.9168, trian_acc: 0.7952, train_mae: 0.4361
+2024-05-26 00:54:07,432 - LLM [INFO] - Test_Loss: 1.3122, test_acc: 0.6550, test_mae: 0.6854
+2024-05-26 01:02:19,659 - LLM [INFO] - save model in MOSIModel0.pth
+2024-05-26 01:02:19,662 - LLM [INFO] - Epoch [8/30], Loss: 0.9150, trian_acc: 0.7998, train_mae: 0.4356
+2024-05-26 01:03:45,570 - LLM [INFO] - Test_Loss: 1.3223, test_acc: 0.6638, test_mae: 0.7354
+2024-05-26 01:11:58,507 - LLM [INFO] - save model in MOSIModel0.pth
+2024-05-26 01:11:58,510 - LLM [INFO] - Epoch [9/30], Loss: 0.8696, trian_acc: 0.8178, train_mae: 0.3953
+2024-05-26 01:13:24,585 - LLM [INFO] - Test_Loss: 1.2772, test_acc: 0.6638, test_mae: 0.6755
+2024-05-26 01:21:37,226 - LLM [INFO] - save model in MOSIModel1.pth
+2024-05-26 01:21:37,232 - LLM [INFO] - Epoch [10/30], Loss: 0.8533, trian_acc: 0.8263, train_mae: 0.3780
+2024-05-26 01:23:03,222 - LLM [INFO] - Test_Loss: 1.3178, test_acc: 0.6463, test_mae: 0.6835
+2024-05-26 01:31:15,851 - LLM [INFO] - save model in MOSIModel1.pth
+2024-05-26 01:31:15,854 - LLM [INFO] - Epoch [11/30], Loss: 0.8094, trian_acc: 0.8380, train_mae: 0.3417
+2024-05-26 01:32:42,063 - LLM [INFO] - Test_Loss: 1.3492, test_acc: 0.6681, test_mae: 0.6996
+2024-05-26 01:40:54,380 - LLM [INFO] - save model in MOSIModel1.pth
+2024-05-26 01:40:54,383 - LLM [INFO] - Epoch [12/30], Loss: 0.8304, trian_acc: 0.8411, train_mae: 0.3570
+2024-05-26 01:42:20,228 - LLM [INFO] - Test_Loss: 1.3001, test_acc: 0.6769, test_mae: 0.6723
+2024-05-26 01:50:32,727 - LLM [INFO] - save model in MOSIModel1.pth
+2024-05-26 01:50:32,730 - LLM [INFO] - Epoch [13/30], Loss: 0.8129, trian_acc: 0.8403, train_mae: 0.3426
+2024-05-26 01:51:58,642 - LLM [INFO] - Test_Loss: 1.3534, test_acc: 0.6725, test_mae: 0.7134
+2024-05-26 02:00:10,756 - LLM [INFO] - save model in MOSIModel1.pth
+2024-05-26 02:00:10,759 - LLM [INFO] - Epoch [14/30], Loss: 0.7874, trian_acc: 0.8528, train_mae: 0.3253
+2024-05-26 02:01:36,688 - LLM [INFO] - Test_Loss: 1.3200, test_acc: 0.6725, test_mae: 0.6872
+2024-05-26 02:09:49,335 - LLM [INFO] - save model in MOSIModel1.pth
+2024-05-26 02:09:49,338 - LLM [INFO] - Epoch [15/30], Loss: 0.7441, trian_acc: 0.8801, train_mae: 0.2884
+2024-05-26 02:11:15,233 - LLM [INFO] - Test_Loss: 1.3031, test_acc: 0.6812, test_mae: 0.6894
+2024-05-26 02:19:28,205 - LLM [INFO] - save model in MOSIModel1.pth
+2024-05-26 02:19:28,209 - LLM [INFO] - Epoch [16/30], Loss: 0.7460, trian_acc: 0.8762, train_mae: 0.2889
+2024-05-26 02:20:54,038 - LLM [INFO] - Test_Loss: 1.3078, test_acc: 0.6681, test_mae: 0.6944
+2024-05-26 02:29:05,901 - LLM [INFO] - save model in MOSIModel1.pth
+2024-05-26 02:29:05,904 - LLM [INFO] - Epoch [17/30], Loss: 0.7607, trian_acc: 0.8723, train_mae: 0.2994
+2024-05-26 02:30:31,966 - LLM [INFO] - Test_Loss: 1.2907, test_acc: 0.6507, test_mae: 0.6757
+2024-05-26 02:38:44,512 - LLM [INFO] - save model in MOSIModel1.pth
+2024-05-26 02:38:44,515 - LLM [INFO] - Epoch [18/30], Loss: 0.7332, trian_acc: 0.8777, train_mae: 0.2815
+2024-05-26 02:40:10,512 - LLM [INFO] - Test_Loss: 1.2557, test_acc: 0.6463, test_mae: 0.6744
+2024-05-26 02:48:22,759 - LLM [INFO] - save model in MOSIModel1.pth
+2024-05-26 02:48:22,764 - LLM [INFO] - Epoch [19/30], Loss: 0.7260, trian_acc: 0.8762, train_mae: 0.2770
+2024-05-26 02:49:48,689 - LLM [INFO] - Test_Loss: 1.3063, test_acc: 0.6900, test_mae: 0.6676
+2024-05-26 02:58:01,409 - LLM [INFO] - save model in MOSIModel2.pth
+2024-05-26 02:58:01,412 - LLM [INFO] - Epoch [20/30], Loss: 0.7253, trian_acc: 0.8832, train_mae: 0.2697
+2024-05-26 02:59:27,602 - LLM [INFO] - Test_Loss: 1.2661, test_acc: 0.6550, test_mae: 0.6645
+2024-05-26 03:07:39,832 - LLM [INFO] - save model in MOSIModel2.pth
+2024-05-26 03:07:39,835 - LLM [INFO] - Epoch [21/30], Loss: 0.6945, trian_acc: 0.8964, train_mae: 0.2503
+2024-05-26 03:09:06,026 - LLM [INFO] - Test_Loss: 1.2908, test_acc: 0.6681, test_mae: 0.6960
+2024-05-26 03:17:18,179 - LLM [INFO] - save model in MOSIModel2.pth
+2024-05-26 03:17:18,182 - LLM [INFO] - Epoch [22/30], Loss: 0.6682, trian_acc: 0.8956, train_mae: 0.2312
+2024-05-26 03:18:44,164 - LLM [INFO] - Test_Loss: 1.3247, test_acc: 0.6681, test_mae: 0.6932
+2024-05-26 03:26:56,243 - LLM [INFO] - save model in MOSIModel2.pth
+2024-05-26 03:26:56,248 - LLM [INFO] - Epoch [23/30], Loss: 0.7062, trian_acc: 0.8879, train_mae: 0.2601
+2024-05-26 03:28:22,206 - LLM [INFO] - Test_Loss: 1.2803, test_acc: 0.6812, test_mae: 0.6736
+2024-05-26 03:36:34,993 - LLM [INFO] - save model in MOSIModel2.pth
+2024-05-26 03:36:34,996 - LLM [INFO] - Epoch [24/30], Loss: 0.7033, trian_acc: 0.8925, train_mae: 0.2581
+2024-05-26 03:38:00,867 - LLM [INFO] - Test_Loss: 1.3065, test_acc: 0.6507, test_mae: 0.6641
+2024-05-26 03:46:12,901 - LLM [INFO] - save model in MOSIModel2.pth
+2024-05-26 03:46:12,903 - LLM [INFO] - Epoch [25/30], Loss: 0.6591, trian_acc: 0.8925, train_mae: 0.2232
+2024-05-26 03:47:38,971 - LLM [INFO] - Test_Loss: 1.2612, test_acc: 0.6725, test_mae: 0.6520
+2024-05-26 03:55:51,526 - LLM [INFO] - save model in MOSIModel2.pth
+2024-05-26 03:55:51,528 - LLM [INFO] - Epoch [26/30], Loss: 0.6583, trian_acc: 0.9058, train_mae: 0.2188
+2024-05-26 03:57:17,413 - LLM [INFO] - Test_Loss: 1.3067, test_acc: 0.6638, test_mae: 0.6952
+2024-05-26 04:05:29,893 - LLM [INFO] - save model in MOSIModel2.pth
+2024-05-26 04:05:29,896 - LLM [INFO] - Epoch [27/30], Loss: 0.6510, trian_acc: 0.8980, train_mae: 0.2194
+2024-05-26 04:06:55,889 - LLM [INFO] - Test_Loss: 1.3053, test_acc: 0.6725, test_mae: 0.6957
+2024-05-26 04:15:08,164 - LLM [INFO] - save model in MOSIModel2.pth
+2024-05-26 04:15:08,167 - LLM [INFO] - Epoch [28/30], Loss: 0.6553, trian_acc: 0.9011, train_mae: 0.2276
+2024-05-26 04:16:34,100 - LLM [INFO] - Test_Loss: 1.2846, test_acc: 0.6725, test_mae: 0.6752
+2024-05-26 04:24:46,623 - LLM [INFO] - save model in MOSIModel2.pth
+2024-05-26 04:24:46,625 - LLM [INFO] - Epoch [29/30], Loss: 0.6597, trian_acc: 0.8925, train_mae: 0.2221
+2024-05-26 04:26:12,891 - LLM [INFO] - Test_Loss: 1.2894, test_acc: 0.6812, test_mae: 0.6707
+2024-05-26 04:34:25,203 - LLM [INFO] - save model in MOSIModel3.pth
+2024-05-26 04:34:25,205 - LLM [INFO] - Epoch [30/30], Loss: 0.6262, trian_acc: 0.9097, train_mae: 0.2054
+2024-05-26 04:35:51,260 - LLM [INFO] - Test_Loss: 1.3026, test_acc: 0.6594, test_mae: 0.6812
+2024-05-26 04:35:51,265 - LLM [INFO] - End training...
+2024-05-26 04:51:06,250 - LLM [INFO] - Test_Loss: 1.1152, test_acc: 0.7230, test_mae: 0.5601
+2024-05-26 04:51:06,263 - LLM [INFO] - Results saved to D:\Search\FT\audio.csv.
+2024-05-26 23:57:21,477 - LLM [INFO] - succeed loading weights
+2024-05-26 23:57:21,481 - LLM [INFO] - Start training...
+2024-05-26 23:59:54,305 - LLM [INFO] - succeed loading weights
+2024-05-26 23:59:54,309 - LLM [INFO] - Start training...
+2024-05-27 00:00:59,631 - LLM [INFO] - succeed loading weights
+2024-05-27 00:00:59,635 - LLM [INFO] - Start training...
+2024-05-27 01:46:21,288 - LLM [INFO] - save model in MOSEIModel1.pth
+2024-05-27 01:46:21,365 - LLM [INFO] - Epoch [1/5], Loss: 0.7367, trian_acc: 0.6499, train_mae: 0.4881
