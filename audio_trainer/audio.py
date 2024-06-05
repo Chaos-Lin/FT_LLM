@@ -313,7 +313,7 @@ if __name__ == "__main__":
         "n_audio_layer": 32,
 
         "save_path": "MOSEIModel",
-        "load_path": "AudioModel.pth",
+        "load_path": "SIMS_whisper_0.pth",
 
     }
     _set_logger(log_dir='D:\Search\FT\\audio_trainer')

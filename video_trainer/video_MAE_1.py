@@ -22,6 +22,7 @@ from pathlib import Path
 from torch.utils.data import DataLoader
 import torch
 import pandas as pd
+import random
 from torch.nn.parameter import Parameter
 logger = logging.getLogger('video')
 
@@ -47,52 +48,6 @@ def _set_logger(log_dir, verbose_level=1):
 
     return logger
 
-
-class LoRALayer(nn.Module):
-    def __init__(self, in_features, out_features, rank=8):
-        super(LoRALayer, self).__init__()
-        self.rank = rank
-        self.A = nn.Parameter(torch.randn(in_features, rank))
-        self.B = nn.Parameter(torch.randn(rank, out_features))
-
-    def forward(self, x):
-        return x @ self.A @ self.B
-
-
-class LoRAInjectableLinear(nn.Module):
-    def __init__(self, original_linear, rank=8):
-        super(LoRAInjectableLinear, self).__init__()
-        self.original_linear = original_linear
-        # 基本模型
-        self.weight = original_linear.weight  # 直接设置 weight 属性
-        self.lora_layer = LoRALayer(original_linear.in_features, original_linear.out_features, rank)
-        # 创建新的LoRA层
-        # 冻结原始线性层的权重
-        for param in self.original_linear.parameters():
-            param.requires_grad = False
-    def forward(self, x):
-        return self.original_linear(x) + self.lora_layer(x)
-
-
-def inject_lora_into_model(model, rank=8):
-    for name, module in model.named_modules():
-        # 遍历模型的所有模块
-        if isinstance(module, nn.Linear):
-            # 检查模型是否时线性层
-            parent, attr = name.rsplit('.', 1)
-            # 将模块名称按最后一个 . 分割，得到父模块名称 parent 和属性名称 attr。这用于定位模块在模型中的位置
-            parent_module = model.get_submodule(parent)
-            # 获取父模块对象
-            original_linear = getattr(parent_module, attr)
-            # 获取父模块中的原始线性层 original_linear。
-            if not hasattr(original_linear, 'weight'):
-                raise AttributeError(f"Module {name} of type {type(original_linear)} has no attribute 'weight' i gonna be crazy")
-            lora_linear = LoRAInjectableLinear(original_linear, rank)
-            # 创建一个新的LoRAInjectableLinear，对象lora_linear，并传入原始线性层和秩。
-            # lora_linear.initialize_weights()
-            setattr(parent_module, attr, lora_linear)
-            # 将父模块中的原始线性层替换为新的 LoRAInjectableLinear 对象。这是通过 setattr 函数实现的。
-
 class MyModel(nn.Module):
     def __init__(self,args):
         super(MyModel, self).__init__()
@@ -104,10 +59,9 @@ class MyModel(nn.Module):
         for name, param in self.model.named_parameters():
             # print(name, param.size())
             param.requires_grad = False
+        self.conv1 = nn.Conv1d(in_channels=1024, out_channels=1024, kernel_size=7, stride=7, padding=0)
 
-        inject_lora_into_model(self.model, rank=self.args.lora_rank)
-        # print(self.model)
-        self.LSTM = nn.LSTM(input_size=1024, hidden_size=1024, num_layers=1, batch_first=True)
+        # self.LSTM = nn.LSTM(input_size=1024, hidden_size=1024, num_layers=1, batch_first=True)
         self.seq1 = nn.Sequential(
             nn.Linear(in_features=1024, out_features=1024),
             nn.Sigmoid(),
@@ -120,6 +74,7 @@ class MyModel(nn.Module):
             nn.Dropout(p=0.1),
             nn.Linear(in_features=512, out_features=128)
         )
+        self.lstm = nn.LSTM(input_size=128, hidden_size=128, num_layers=1, batch_first=True)
 
         self.seq3 = nn.Sequential(
             nn.Linear(in_features=128, out_features=16),
@@ -130,15 +85,11 @@ class MyModel(nn.Module):
 
         if os.path.exists(self.seq_weight):
             state_dict = torch.load(self.seq_weight)
+            self.conv1.load_state_dict(state_dict['conv1'])
+            self.lstm.load_state_dict(state_dict['lstm'])
             self.seq1.load_state_dict(state_dict['seq1'])
             self.seq2.load_state_dict(state_dict['seq2'])
             self.seq3.load_state_dict(state_dict['seq3'])
-            self.LSTM.load_state_dict(state_dict['LSTM'])
-            lora_state_dict = state_dict['LoRA']
-            for name, state_dict in lora_state_dict.items():
-                module = dict(self.model.named_modules())[name]
-                if isinstance(module, LoRAInjectableLinear):
-                    module.lora_layer.load_state_dict(state_dict)
             logger.info("Loaded seq weights")
         else:
             logger.info("No seq weights")
@@ -151,10 +102,13 @@ class MyModel(nn.Module):
 
     def forward(self, inputs):
         video_features = self.model(inputs).last_hidden_state
-        _, final_states = self.LSTM(video_features)
-        h = self.seq1(final_states[0].squeeze(0))
+        video_features = video_features.transpose(1, 2)
+        h = self.conv1(video_features)
+        h = h.transpose(1,2)
+        h = self.seq1(h)
         output = self.seq2(h)
-        h = self.seq3(output)
+        _, final_states = self.lstm(output)
+        h = self.seq3(final_states[0].squeeze(0))
         output = torch.sigmoid(h)
         output = output * self.output_range + self.output_shift
 
@@ -164,7 +118,9 @@ def my_collate(batch):
     videos = []
     labels = []
     processor = AutoProcessor.from_pretrained("D:\Search\LLM\\xclip-base-patch32")
+    # processor = AutoImageProcessor.from_pretrained("D:\Search\LLM\\videomae-large")
     def read_video_pyav(container, indices):
+
         '''
         Decode the video with PyAV decoder.
         Args:
@@ -203,30 +159,69 @@ def my_collate(batch):
 
     for video_path, label in batch:
         container = av.open(video_path)
+        frame_count = 0
+        for frame in container.decode(video=0):
+            frame_count += 1
+        # print(video_path)
         # sample 8 frames
-        indices = sample_frame_indices(clip_len=16, frame_sample_rate=1, seg_len=container.streams.video[0].frames)
-        # 每隔一秒钟采样一次，一共采样8秒钟
+        # indices = sample_frame_indices(clip_len=16, frame_sample_rate=1, seg_len=container.streams.video[0].frames)
+        indices = sample_frame_indices(clip_len=16, frame_sample_rate=1, seg_len=frame_count)
         video = read_video_pyav(container, indices)
+
+
         # video_array = np.array(video)
         # video_min = video_array.min()
         # video_max = video_array.max()
         # video_normalized = (video_array - video_min) / (video_max - video_min)
+        # inputs = processor(list(video_normalized), return_tensors="pt")
+
         inputs = processor(videos=list(video), return_tensors="pt")
 
         videos.append(inputs["pixel_values"].squeeze(0))
         labels.append(label)
-    labels = np.array(labels)
+
 
     return torch.stack(videos), torch.tensor(labels)
 
+# class MyDataset(Dataset):
+#     def __init__(self, args, mode):
+#         super(MyDataset, self).__init__()
+#         self.args = args
+#         with open(args['file_path'], 'rb') as f:
+#             data = pickle.load(f)
+#             self.data = data[mode]
+#             # print(f"Mode: {mode}, Number of samples: {len(self.data['audio'])}")
+#
+#     def __len__(self):
+#         return len(self.data['audio']/10)
+#
+#     def __getitem__(self, item):
+#         video = self.data['video'][item]
+#         label = self.data['label'][item]
+#         return video, label
+
 class MyDataset(Dataset):
-    def __init__(self, args, mode):
+    def __init__(self, args, mode, fraction=0.1):
         super(MyDataset, self).__init__()
         self.args = args
         with open(args['file_path'], 'rb') as f:
             data = pickle.load(f)
             self.data = data[mode]
-            # print(f"Mode: {mode}, Number of samples: {len(self.data['audio'])}")
+
+            # 获取总样本数
+            total_samples = len(self.data['audio'])
+
+            # 计算子集样本数
+            subset_size = int(total_samples * fraction)
+
+            # 随机选择子集索引
+            # subset_indices = random.sample(range(total_samples), subset_size)
+            #
+            # # 使用子集索引筛选数据
+            # self.data = {key: [value[i] for i in subset_indices] for key, value in self.data.items()}
+
+            # 只取前 subset_size 个样本
+            self.data = {key: value[:subset_size] for key, value in self.data.items()}
 
     def __len__(self):
         return len(self.data['audio'])
@@ -235,7 +230,6 @@ class MyDataset(Dataset):
         video = self.data['video'][item]
         label = self.data['label'][item]
         return video, label
-
 class trainer():
     def __init__(self, args, model):
         self.args = args
@@ -308,8 +302,12 @@ class trainer():
             y_pred, y_true = [], []
             train_loss = 1
             self.model.train()
+            i = 0
 
             for batch in tqdm(train_dataloader):
+                # i += 1
+                # if i % 10 != 0 :
+                #     continue
                 optimizer.zero_grad()
                 video, label = batch
                 video = video.to(self.args.device)
@@ -329,26 +327,21 @@ class trainer():
                 # 针对不同的数据集选择不同的fusion方式
                 # 试试其他数据集
                 # 合适的微调机制——更好的特征
-
+                # break
 
             if epoch % 10 == 9:
                 save_time += 1
 
             # torch.save(self.model.state_dict(), self.args["save_path"])
             # logging.info(f"save model in {self.args['save_path']}")
-            path = "RoLA_MOSI_mae" + str(save_time) + ".pth"
-
-            lora_state_dict = {}
-            for name, module in self.model.model.named_modules():
-                if isinstance(module, LoRAInjectableLinear):
-                    lora_state_dict[name] = module.lora_layer.state_dict()
+            path = "MOSEI_mae_conv" + str(save_time) + ".pth"
 
             state_dict = {
-                'LSTM': self.model.LSTM.state_dict(),
+                'lstm': self.model.lstm.state_dict(),
                 'seq1': self.model.seq1.state_dict(),
                 'seq2': self.model.seq2.state_dict(),
                 'seq3': self.model.seq3.state_dict(),
-                'LoRA': lora_state_dict
+                'conv1': self.model.conv1.state_dict()
             }
             torch.save(state_dict, path)
             logger.info(f"save model in {path}")
@@ -417,12 +410,11 @@ if __name__ == "__main__":
         'learning_rate': 1e-5,
         "device": 'cuda',
         "num_epochs": 20,
-        "batch_size": 2,
-        "file_path": 'D:\Search\FT\\MOSI.pkl',
+        "batch_size": 16,
+        "file_path": 'D:\Search\FT\\MOSEI.pkl',
 
         "save_path": "Model",
-        "seq_weight": "RoLa_MOSI_mae_0.pth",
-        "lora_rank": 2
+        "seq_weight": "MOSEI_mae_conv0.pth",
 
     }
     _set_logger(log_dir='D:\Search\FT\\video_trainer')
@@ -437,10 +429,7 @@ if __name__ == "__main__":
     test_dataloader = DataLoader(dataset_test, batch_size=args["batch_size"], shuffle=True, collate_fn=my_collate)
 
     model = MyModel(args).to(args["device"])
-    # todo LORA
-    # lora_parameters = [param for name, param in model.named_parameters() if 'lora_layer' in name]
-    # optimizer = torch.optim.Adam(lora_parameters, lr=1e-4)
-
+    # model.load_state_dict(torch.load(args["load_path"]))
     trainer = trainer(args, model)
     logger.info('Start training...')
 
@@ -494,7 +483,6 @@ if __name__ == "__main__":
     plt.ylabel('mae')
     plt.legend()
     plt.show()
-
     del model
     torch.cuda.empty_cache()
 

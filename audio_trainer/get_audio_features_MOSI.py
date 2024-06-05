@@ -23,7 +23,7 @@ class getFeatures():
         self.output_dir = output_dir
         self.padding_mode = 'zeros'
         self.padding_location = 'back'
-        model_id = r"AudioModel.pth"
+        model_id = r"SIMS_whisper_0.pth"
         self.model = MyModel(args)
         self.model.load_state_dict(torch.load(model_id))
         self.model.to("cuda")

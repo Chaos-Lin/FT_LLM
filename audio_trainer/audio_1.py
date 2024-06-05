@@ -1,21 +1,12 @@
-import av
-import torch
-from transformers import AutoImageProcessor, VideoMAEModel, AutoProcessor
-import os
-import numpy as np
-from glob import glob
-from tqdm import tqdm
-import torch.nn as nn
+import os.path
 import pickle
 from torch.utils.data import Dataset
 from torch import optim
 from torch import nn as nn
 import numpy as np
-from sklearn.metrics import accuracy_score, f1_score
-import torch
+from sklearn.metrics import f1_score
 from tqdm import tqdm
 import matplotlib.pyplot as plt
-
 from easydict import EasyDict as edict
 import logging
 from pathlib import Path
@@ -23,14 +14,23 @@ from torch.utils.data import DataLoader
 import torch
 import pandas as pd
 from torch.nn.parameter import Parameter
-logger = logging.getLogger('video')
+
+from whisper.audio import (
+    N_FRAMES,
+    N_SAMPLES,
+    log_mel_spectrogram,
+    pad_or_trim,
+)
+from whisper.model import AudioEncoder
+
+logger = logging.getLogger('LLM')
 
 def _set_logger(log_dir, verbose_level=1):
 
     # base logger
-    log_file_path = Path(log_dir) /"video.log"
+    log_file_path = Path(log_dir) /"audio.log"
     # log_file_path = log_dir
-    logger = logging.getLogger('video')
+    logger = logging.getLogger('LLM')
     logger.setLevel(logging.DEBUG)
 
     fh = logging.FileHandler(log_file_path)
@@ -48,79 +48,46 @@ def _set_logger(log_dir, verbose_level=1):
     return logger
 
 
-class LoRALayer(nn.Module):
-    def __init__(self, in_features, out_features, rank=8):
-        super(LoRALayer, self).__init__()
-        self.rank = rank
-        self.A = nn.Parameter(torch.randn(in_features, rank))
-        self.B = nn.Parameter(torch.randn(rank, out_features))
-
-    def forward(self, x):
-        return x @ self.A @ self.B
-
-
-class LoRAInjectableLinear(nn.Module):
-    def __init__(self, original_linear, rank=8):
-        super(LoRAInjectableLinear, self).__init__()
-        self.original_linear = original_linear
-        # 基本模型
-        self.weight = original_linear.weight  # 直接设置 weight 属性
-        self.lora_layer = LoRALayer(original_linear.in_features, original_linear.out_features, rank)
-        # 创建新的LoRA层
-        # 冻结原始线性层的权重
-        for param in self.original_linear.parameters():
-            param.requires_grad = False
-    def forward(self, x):
-        return self.original_linear(x) + self.lora_layer(x)
-
-
-def inject_lora_into_model(model, rank=8):
-    for name, module in model.named_modules():
-        # 遍历模型的所有模块
-        if isinstance(module, nn.Linear):
-            # 检查模型是否时线性层
-            parent, attr = name.rsplit('.', 1)
-            # 将模块名称按最后一个 . 分割，得到父模块名称 parent 和属性名称 attr。这用于定位模块在模型中的位置
-            parent_module = model.get_submodule(parent)
-            # 获取父模块对象
-            original_linear = getattr(parent_module, attr)
-            # 获取父模块中的原始线性层 original_linear。
-            if not hasattr(original_linear, 'weight'):
-                raise AttributeError(f"Module {name} of type {type(original_linear)} has no attribute 'weight' i gonna be crazy")
-            lora_linear = LoRAInjectableLinear(original_linear, rank)
-            # 创建一个新的LoRAInjectableLinear，对象lora_linear，并传入原始线性层和秩。
-            # lora_linear.initialize_weights()
-            setattr(parent_module, attr, lora_linear)
-            # 将父模块中的原始线性层替换为新的 LoRAInjectableLinear 对象。这是通过 setattr 函数实现的。
+# with open(r'D:\Search\LLM\SIMS.pkl', 'rb') as f:
+#     data = pickle.load(f)
+#     print(data['train'].keys())
+#     print(data['train']['audio'].shape)
 
 class MyModel(nn.Module):
-    def __init__(self,args):
+    def __init__(self,dims):
         super(MyModel, self).__init__()
-        self.seq_weight = args["seq_weight"]
-        self.args = args
-        self.model_id = "D:\Search\LLM\\videomae-large"
-        # self.processor = AutoProcessor.from_pretrained(self.model_id)
-        self.model = VideoMAEModel.from_pretrained(self.model_id)
-        for name, param in self.model.named_parameters():
+        self.dims = dims
+        # model_id = r"D:\Search\LLM\whisper-main\\large-v3.pt"
+        # self.model = whisper.load_model(model_id)
+        # torch.save(self.model.encoder.state_dict(), 'encoder_weights.pth')
+        self.encoder = AudioEncoder(
+            self.dims.n_mels,
+            self.dims.n_audio_ctx,
+            self.dims.n_audio_state,
+            self.dims.n_audio_head,
+            self.dims.n_audio_layer,
+        )
+        # self.encoder.load_state_dict(torch.load("encoder_weights.pth"))
+        for name, param in self.encoder.named_parameters():
             # print(name, param.size())
             param.requires_grad = False
 
-        inject_lora_into_model(self.model, rank=self.args.lora_rank)
-        # print(self.model)
-        self.LSTM = nn.LSTM(input_size=1024, hidden_size=1024, num_layers=1, batch_first=True)
+        self.conv1 = nn.Conv1d(in_channels=1280, out_channels=1280, kernel_size=7, stride=7, padding=6)
+
         self.seq1 = nn.Sequential(
-            nn.Linear(in_features=1024, out_features=1024),
+            nn.Linear(in_features=1280, out_features=1280),
             nn.Sigmoid(),
             nn.Dropout(p=0.2),
-            nn.Linear(in_features=1024, out_features=1024)
+            nn.Linear(in_features=1280, out_features=1280)
         )
+
         self.seq2 = nn.Sequential(
-            nn.Linear(in_features=1024, out_features=512),
+            nn.Linear(in_features=1280, out_features=512),
 
             nn.Dropout(p=0.1),
             nn.Linear(in_features=512, out_features=128)
         )
-
+        self.lstm = nn.LSTM(input_size=128, hidden_size=128, num_layers=1, batch_first=True)
         self.seq3 = nn.Sequential(
             nn.Linear(in_features=128, out_features=16),
             nn.Sigmoid(),
@@ -128,20 +95,6 @@ class MyModel(nn.Module):
             nn.Linear(in_features=16, out_features=1)
         )
 
-        if os.path.exists(self.seq_weight):
-            state_dict = torch.load(self.seq_weight)
-            self.seq1.load_state_dict(state_dict['seq1'])
-            self.seq2.load_state_dict(state_dict['seq2'])
-            self.seq3.load_state_dict(state_dict['seq3'])
-            self.LSTM.load_state_dict(state_dict['LSTM'])
-            lora_state_dict = state_dict['LoRA']
-            for name, state_dict in lora_state_dict.items():
-                module = dict(self.model.named_modules())[name]
-                if isinstance(module, LoRAInjectableLinear):
-                    module.lora_layer.load_state_dict(state_dict)
-            logger.info("Loaded seq weights")
-        else:
-            logger.info("No seq weights")
 
         self.sig = nn.Sigmoid()
         self.output_range = Parameter(torch.FloatTensor([6]), requires_grad=False)
@@ -149,75 +102,31 @@ class MyModel(nn.Module):
         # self.Th = nn.functional.tanh()
 
 
-    def forward(self, inputs):
-        video_features = self.model(inputs).last_hidden_state
-        _, final_states = self.LSTM(video_features)
-        h = self.seq1(final_states[0].squeeze(0))
+    def forward(self, x):
+        audio_features = self.encoder(x)
+        audio_features = audio_features.transpose(1,2)
+        h = self.conv1(audio_features)
+        h = h.transpose(1, 2)
+        h = self.seq1(h)
         output = self.seq2(h)
-        h = self.seq3(output)
+        _, final_states = self.lstm(output)
+        h = self.seq3(final_states[0].squeeze(0))
         output = torch.sigmoid(h)
         output = output * self.output_range + self.output_shift
 
         return output
 
+
 def my_collate(batch):
-    videos = []
+    mel_segments = []
     labels = []
-    processor = AutoProcessor.from_pretrained("D:\Search\LLM\\xclip-base-patch32")
-    def read_video_pyav(container, indices):
-        '''
-        Decode the video with PyAV decoder.
-        Args:
-            container (`av.container.input.InputContainer`): PyAV container.
-            indices (`List[int]`): List of frame indices to decode.
-        Returns:
-            result (np.ndarray): np array of decoded frames of shape (num_frames, height, width, 3).
-        '''
-        frames = []
-        container.seek(0)
-        start_index = indices[0]
-        end_index = indices[-1]
-        for i, frame in enumerate(container.decode(video=0)):
-            if i > end_index:
-                break
-            if i >= start_index and i in indices:
-                frames.append(frame)
-        return np.stack([x.to_ndarray(format="rgb24") for x in frames])
-
-    def sample_frame_indices(clip_len, frame_sample_rate, seg_len):
-        '''
-        Sample a given number of frame indices from the video.
-        Args:
-            clip_len (`int`): Total number of frames to sample.
-            frame_sample_rate (`int`): Sample every n-th frame.
-            seg_len (`int`): Maximum allowed index of sample's last frame.
-        Returns:
-            indices (`List[int]`): List of sampled frame indices
-        '''
-        converted_len = int(clip_len * frame_sample_rate)
-        end_idx = np.random.randint(converted_len, seg_len)
-        start_idx = end_idx - converted_len
-        indices = np.linspace(start_idx, end_idx, num=clip_len)
-        indices = np.clip(indices, start_idx, end_idx - 1).astype(np.int64)
-        return indices
-
-    for video_path, label in batch:
-        container = av.open(video_path)
-        # sample 8 frames
-        indices = sample_frame_indices(clip_len=16, frame_sample_rate=1, seg_len=container.streams.video[0].frames)
-        # 每隔一秒钟采样一次，一共采样8秒钟
-        video = read_video_pyav(container, indices)
-        # video_array = np.array(video)
-        # video_min = video_array.min()
-        # video_max = video_array.max()
-        # video_normalized = (video_array - video_min) / (video_max - video_min)
-        inputs = processor(videos=list(video), return_tensors="pt")
-
-        videos.append(inputs["pixel_values"].squeeze(0))
+    for audio, label in batch:
+        mel = log_mel_spectrogram(audio, 128, padding=N_SAMPLES)
+        mel_segment = pad_or_trim(mel, N_FRAMES).to("cuda").to(torch.float32)
+        mel_segments.append(mel_segment)
         labels.append(label)
-    labels = np.array(labels)
 
-    return torch.stack(videos), torch.tensor(labels)
+    return torch.stack(mel_segments), torch.tensor(labels)
 
 class MyDataset(Dataset):
     def __init__(self, args, mode):
@@ -232,9 +141,10 @@ class MyDataset(Dataset):
         return len(self.data['audio'])
 
     def __getitem__(self, item):
-        video = self.data['video'][item]
+        audio = self.data['audio'][item]
         label = self.data['label'][item]
-        return video, label
+        return audio, label
+
 
 class trainer():
     def __init__(self, args, model):
@@ -302,21 +212,21 @@ class trainer():
         eval_losses = []
         eval_Mult_acc_2 = []
         eval_MAE = []
-        save_time = 0
+        save_time = 1
 
         for epoch in range(self.args.num_epochs):
             y_pred, y_true = [], []
-            train_loss = 1
+            train_loss = 0
             self.model.train()
 
             for batch in tqdm(train_dataloader):
                 optimizer.zero_grad()
-                video, label = batch
-                video = video.to(self.args.device)
+                audio, label = batch
+                audio = audio.to(self.args.device)
                 # audio = np.array(list(audio))
                 label = label.to(self.args.device)
                 # inputs = self.spec_augment(audio)
-                outputs = self.model(video).squeeze()
+                outputs = self.model(audio).squeeze()
                 loss = self.criterion(outputs, label)
                 loss.backward()
                 optimizer.step()
@@ -330,27 +240,13 @@ class trainer():
                 # 试试其他数据集
                 # 合适的微调机制——更好的特征
 
-
-            if epoch % 10 == 9:
+            if epoch % 1 == 0:
                 save_time += 1
 
             # torch.save(self.model.state_dict(), self.args["save_path"])
             # logging.info(f"save model in {self.args['save_path']}")
-            path = "RoLA_MOSI_mae" + str(save_time) + ".pth"
-
-            lora_state_dict = {}
-            for name, module in self.model.model.named_modules():
-                if isinstance(module, LoRAInjectableLinear):
-                    lora_state_dict[name] = module.lora_layer.state_dict()
-
-            state_dict = {
-                'LSTM': self.model.LSTM.state_dict(),
-                'seq1': self.model.seq1.state_dict(),
-                'seq2': self.model.seq2.state_dict(),
-                'seq3': self.model.seq3.state_dict(),
-                'LoRA': lora_state_dict
-            }
-            torch.save(state_dict, path)
+            path = "MOSI_conv_" + str(save_time) + ".pth"
+            torch.save(self.model.state_dict(), path)
             logger.info(f"save model in {path}")
 
             train_loss /= len(train_dataloader)
@@ -410,24 +306,26 @@ class trainer():
         }
         return results
 
-
-
 if __name__ == "__main__":
     args = {
         'learning_rate': 1e-5,
         "device": 'cuda',
-        "num_epochs": 20,
-        "batch_size": 2,
-        "file_path": 'D:\Search\FT\\MOSI.pkl',
+        "num_epochs": 10,
+        "batch_size": 16,
+        "file_path": 'D:\Search\FT\\MOSEI.pkl',
+        "n_mels": 128,
+        "n_audio_ctx": 1500,
+        "n_audio_state": 1280,
+        "n_audio_head": 20,
+        "n_audio_layer": 32,
 
-        "save_path": "Model",
-        "seq_weight": "RoLa_MOSI_mae_0.pth",
-        "lora_rank": 2
+        "save_path": "MOSEIModel",
+        "load_path": "MOSI_conv_1.pth",
 
     }
-    _set_logger(log_dir='D:\Search\FT\\video_trainer')
+    _set_logger(log_dir='D:\Search\FT\\audio_trainer')
     args = edict(args)
-    # file_path = 'D:\Search\LLM\FT\\SIMS.pkl'
+    # file_path = '/SIMS.pkl'
     dataset_train = MyDataset(args, 'train')
     dataset_val = MyDataset(args, 'valid')
     dataset_test = MyDataset(args, 'test')
@@ -437,10 +335,10 @@ if __name__ == "__main__":
     test_dataloader = DataLoader(dataset_test, batch_size=args["batch_size"], shuffle=True, collate_fn=my_collate)
 
     model = MyModel(args).to(args["device"])
-    # todo LORA
-    # lora_parameters = [param for name, param in model.named_parameters() if 'lora_layer' in name]
-    # optimizer = torch.optim.Adam(lora_parameters, lr=1e-4)
-
+    if os.path.exists(args["load_path"]):
+        model.load_state_dict(torch.load(args["load_path"]))
+        logger.info("succeed loading weights")
+    else: logger.info("no such weights file")
     trainer = trainer(args, model)
     logger.info('Start training...')
 
@@ -452,7 +350,7 @@ if __name__ == "__main__":
     test_results = trainer.do_test(test_dataloader)
     criterions = list(test_results["test_result"].keys())
     # save result to csv
-    csv_file = Path(f"D:\Search\FT\\video.csv")
+    csv_file = Path(f"D:\Search\FT\\audio.csv")
     if csv_file.is_file():
         df = pd.read_csv(csv_file)
     else:
@@ -497,4 +395,8 @@ if __name__ == "__main__":
 
     del model
     torch.cuda.empty_cache()
+
+
+
+
 

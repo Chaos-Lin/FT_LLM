@@ -112,6 +112,7 @@ def my_collate(batch):
     processor = AutoProcessor.from_pretrained("D:\Search\LLM\\xclip-base-patch32")
     # processor = AutoImageProcessor.from_pretrained("D:\Search\LLM\\videomae-large")
     def read_video_pyav(container, indices):
+
         '''
         Decode the video with PyAV decoder.
         Args:
@@ -253,7 +254,7 @@ class trainer():
         eval_losses = []
         eval_Mult_acc_2 = []
         eval_MAE = []
-        save_time = 0
+        save_time = 3
 
         for epoch in range(self.args.num_epochs):
             y_pred, y_true = [], []
@@ -360,12 +361,12 @@ if __name__ == "__main__":
     args = {
         'learning_rate': 1e-5,
         "device": 'cuda',
-        "num_epochs": 40,
+        "num_epochs": 10,
         "batch_size": 16,
         "file_path": 'D:\Search\FT\\MOSI.pkl',
 
         "save_path": "Model",
-        "seq_weight": "MOSI_mae_0.pth",
+        "seq_weight": "MOSI_mae_3.pth",
 
     }
     _set_logger(log_dir='D:\Search\FT\\video_trainer')
